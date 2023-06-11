@@ -5,18 +5,21 @@ import Link from "next/link";
 const Match = ({ match }) => {
   return (
     <Link href={`/matches/${match.id}`}>
-      <div>
-        <div>
-          <span>{match.team1}</span>
-          <span>vs</span>
-          <span>{match.team2}</span>
+      <div className="p-4 border rounded shadow-md mb-4 hover:border-red-500">
+        <div className="flex justify-between items-center mb-2">
+          <span className="text-lg font-bold">{match.team1}</span>
+          <span className="text-lg">vs</span>
+
+          <span className="text-lg font-bold">{match.team2}</span>
         </div>
 
-        <div>
-          <span>Odds: {match.odds.team1}</span>
-          <span>Odds: {match.odds.team2}</span>
+        <div className="flex justify-between">
+          <span className="text-sm">Odds: {match.odds.team1}</span>
+          <span className="text-sm">Odds: {match.odds.team2}</span>
         </div>
-        <div>{match.date}</div>
+        <div className="flex justify-center mt-2 text-sm text-gray-500">
+          {match.date}
+        </div>
       </div>
     </Link>
   );
